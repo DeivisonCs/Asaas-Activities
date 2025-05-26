@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	</head>
+    <body>
+        <ul class="container">
+            <li class="card" th:each="order : ${orders}">
+                <div class="card-header" th:text="${order.name}">Product Name</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-8 mb-3">
+                            <div class="row mb-3">
+                                <div class="col-md-5">Price: R$<span th:text="${order.price}">xx,xx</span></div>
+                                <div class="col-md-6">Delivery Date: <span th:text="${order.delivery_date}">xx/xx/xxxx</span></div>
+                            </div>
+							
+                            <div>Product</div> 
+                            <div class="mb-3" > <input class="form-control" th:value="${order.productUrl}" value="Product URL" /></div>
+							
+                            <div>Description</div>
+                            <div>
+                                <textarea class="form-control" th:text="${order.description}">description</textarea>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div>
+                                <img class="img-thumbnail" th:src="${order.imageUrl}" src="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </body>
+</html>
