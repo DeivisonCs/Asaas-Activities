@@ -1,4 +1,4 @@
-package com.cleanarchitecture.school;
+package com.cleanarchitecture.domain.school;
 
 import java.util.ArrayList;
 import java.util.List;

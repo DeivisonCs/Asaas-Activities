@@ -1,4 +1,4 @@
-package com.cleanarchitecture.school;
+package com.cleanarchitecture.domain.school;
 
 public class PhoneNumber {
 

@@ -1,23 +1,23 @@
-package school;
+package domain;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import com.cleanarchitecture.school.PhoneNumber;
+import com.cleanarchitecture.domain.school.Email;
 
-public class PhoneNumberTest {
+public class EmailTest {
 
     @Test
     void InvalidArguments() {
         assertThrows(IllegalArgumentException.class, 
-            () -> new PhoneNumber(null, null));
+            () -> new Email(null));
 
         assertThrows(IllegalArgumentException.class, 
-            () -> new PhoneNumber("", ""));
+            () -> new Email(""));
 
         assertThrows(IllegalArgumentException.class, 
-            () -> new PhoneNumber("24", "91111"));
+            () -> new Email("teste"));
             
     }
 }
