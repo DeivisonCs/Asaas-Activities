@@ -13,14 +13,14 @@ class UserController {
 
     def save() {
         def user = new User(params)
-        redirect(action: "SignUpForm")
+        // redirect(action: "SignUpForm")
 
         if(user.validate()) {
-            println "User created: ${user.properties}"
-            render(view: "signUpForm", model: [user: user, created: true])
+            println "\nUser created: ${user.properties}\n"
+            render(view: "SignUpForm", model: [user: user, created: true])
         } else {
-            println "Error creating user: ${user.errors}"
-            render(view: "signUpForm", model: [user: user, created: false])
+            println "\nError creating user: ${user.errors}\n"
+            render(view: "SignUpForm", model: [user: user, created: false])
         }
     }
 }

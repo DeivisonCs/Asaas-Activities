@@ -15,7 +15,7 @@ class User {
     }
 
     static constraints = {
-        name blank: false
+        name blank: false, size: 3..50
         email email: true, blank: false, unique: true
         cpf blank: false, unique: true
         birthDate nullable: false, validator: { val ->

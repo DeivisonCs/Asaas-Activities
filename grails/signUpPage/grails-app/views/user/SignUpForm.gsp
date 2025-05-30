@@ -10,6 +10,7 @@
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" 
     crossorigin="anonymous">
 
+    <asset:stylesheet src="global.css"/>
     <asset:stylesheet src="signUpForm.css"/>
 </head>
 <body>
@@ -18,9 +19,17 @@
             <asset:image src="AsaasLogo.png" alt="Asaas Logo"/>
         </span>
     </header>
-    <!-- <g:if test="${flash.message}">
-        <div style="color: green">${flash.message}</div>
-    </g:if> -->
+    
+    <g:if test="${created}">
+        <div class="sign-up-alert">
+            <span class="alert alert-success">User Created!</span>
+        </div>
+    </g:if>
+    <g:if test="${!created}">
+        <div class="sign-up-alert alert alert-warning">
+            User Not Created!
+        </div>
+    </g:if>
 
     <main class="container main-content">
         <div class="card form-section row">
@@ -33,31 +42,43 @@
             <g:form class="card-body sign-up-form-section col-6 p-4" controller="user" action="save">
                 <div class="row mb-3">
                     <div>
-                        <label>Name:</label>
-                        <g:textField class="form-control input-field" name="name" value="${user?.name}" />
+                        <label class="required-field">Name:</label>
+                        <g:textField 
+                            class="form-control input-field" 
+                            name="name" 
+                            value="${user?.name}"
+                            placeholder="Name"/>
                         <g:hasErrors bean="${user}" field="name">
                             <span style="color:red;"><g:message error="${it}"/></span>
                         </g:hasErrors>
                     </div>
 
                     <div>
-                        <label>Email:</label>
-                        <g:textField class="form-control input-field" name="email" value="${user?.email}" />
+                        <label class="required-field">Email:</label>
+                        <g:textField 
+                            class="form-control input-field" 
+                            name="email" 
+                            value="${user?.email}"
+                            placeholder="Email"/>
                         <g:hasErrors bean="${user}" field="email">
                             <span style="color:red;"><g:message error="${it}"/></span>
                         </g:hasErrors>
                     </div>
             
                     <div>
-                        <label>CPF:</label>
-                        <g:textField class="form-control input-field" name="cpf" value="${user?.cpf}" />
+                        <label class="required-field">CPF:</label>
+                        <g:textField 
+                            class="form-control input-field" 
+                            name="cpf" 
+                            value="${user?.cpf}"
+                            placeholder="xxx.xxx.xxx-xx"/>
                         <g:hasErrors bean="${user}" field="cpf">
                             <span style="color:red;"><g:message error="${it}"/></span>
                         </g:hasErrors>
                     </div>
             
                     <div>
-                        <label>Phone Number:</label>
+                        <label class="required-field">Phone Number:</label>
                         <g:textField 
                             class="form-control input-field" 
                             name="phoneNumber" 
@@ -68,7 +89,7 @@
                     </div>
             
                     <div class="col-12">
-                        <label>Birth Date:</label>
+                        <label class="required-field">Birth Date:</label>
                         <g:datePicker class="form-control input-field"
                             name="birthDate" 
                             value="${user?.birthDate}" 
@@ -80,17 +101,18 @@
                     </div>
 
                     <div class="col-12 col-sm-6">
-                        <label>CEP:</label>
+                        <label class="required-field">CEP:</label>
                         <g:textField class="form-control input-field" 
                             name="cep" 
-                            value="${user?.cep}"/>
+                            value="${user?.cep}"
+                            placeholder="CEP"/>
                         <g:hasErrors bean="${user}" field="cep">
                             <span style="color:red;"><g:message error="${it}"/></span>
                         </g:hasErrors>
                     </div>
 
                     <div>
-                        <label>Address:</label>
+                        <label class="required-field">Address:</label>
                         <g:textField class="form-control input-field" name="address" value="${user?.address}" disabled="disabled"/>
                         <g:hasErrors bean="${user}" field="address">
                             <span style="color:red;"><g:message error="${it}"/></span>
