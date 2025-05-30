@@ -1,7 +1,7 @@
 document.getElementById('cep').addEventListener('blur', function() {
     var cep = this.value.replace(/\D/g, '');
     if (cep.length !== 8) {
-        alert('CEP inválido. Deve conter 8 dígitos.');
+        //alert('CEP inválido. Deve conter 8 dígitos.');
         return;
     }
 

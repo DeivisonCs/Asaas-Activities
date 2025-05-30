@@ -49,7 +49,8 @@
                             class="form-control input-field" 
                             name="name" 
                             value="${user?.name}"
-                            placeholder="Name"/>
+                            placeholder="Name"
+                            maxLength="50"/>
                         <g:eachError bean="${user}" field="name" var="err">
                             <span style="color:red;"><g:message error="${err}"/></span>
                         </g:eachError>
@@ -73,7 +74,8 @@
                             class="form-control input-field" 
                             name="cpf" 
                             value="${user?.cpf}"
-                            placeholder="xxx.xxx.xxx-xx"/>
+                            placeholder="xxx.xxx.xxx-xx"
+                            pattern='\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}'/>
                         <g:eachError bean="${user}" field="cpf" var="err">
                             <span style="color:red;"><g:message error="${err}"/></span>
                         </g:eachError>
@@ -85,7 +87,8 @@
                             class="form-control input-field" 
                             name="phoneNumber" 
                             value="${user?.phoneNumber}"
-                            placeholder="(xx)xxxxx-xxxx"/>
+                            placeholder="(xx)xxxxx-xxxx"
+                            pattern='\\(\\d{2}\\)\\d{4,5}-\\d{4}'/>
                         <g:eachError bean="${user}" field="phoneNumber" var="err">
                             <span style="color:red;"><g:message error="${err}"/></span>
                         </g:eachError>
@@ -110,7 +113,8 @@
                         <g:textField class="form-control input-field" 
                             name="cep" 
                             value="${user?.cep}"
-                            placeholder="CEP"/>
+                            placeholder="xxxxx-xxx"
+                        pattern='\\d{5}-\\d{3}'/>
                         <g:eachError bean="${user}" field="cep" var="err">
                             <span style="color:red;"><g:message error="${err}"/></span>
                         </g:eachError>
