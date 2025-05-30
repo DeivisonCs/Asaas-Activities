@@ -27,11 +27,6 @@
             <span class="alert alert-success">User Created!</span>
         </div>
     </g:if>
-    <g:if test="${user && !created}">
-        <div class="sign-up-alert">
-             <span class="alert alert-warning">Error Creating User!</span>
-        </div>
-    </g:if>
 
     <main class="container main-content">
         <div class="card form-section row">
