@@ -7,6 +7,9 @@
     transform: translate(-5px, 90px);
     width: 100vw;
     text-align: end;
+
+    position: fixed;
+    z-index: 4;
 }
 
 header.page-header {
@@ -27,6 +30,7 @@ header.page-header {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 
     .form-section {
         /* width: 400px; */
@@ -89,9 +93,14 @@ header.page-header {
 
 @media screen and (max-width: 780px){
     .main-content {
+        
         .form-section{
+            margin-top: 150px;
+            box-shadow: none;
+            border: none;
+            
             .logo-section{
-                border-radius: 10px;
+                border-radius: 0px;
                 background-color: #fff;
                 width: 100%;
 
