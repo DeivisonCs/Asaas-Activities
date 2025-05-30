@@ -26,8 +26,8 @@
         </div>
     </g:if>
     <g:if test="${!created}">
-        <div class="sign-up-alert alert alert-warning">
-            User Not Created!
+        <div class="sign-up-alert">
+             <span class="alert alert-warning">Error Creating User!</span>
         </div>
     </g:if>
 
@@ -40,83 +40,86 @@
             </div>
 
             <g:form class="card-body sign-up-form-section col-6 p-4" controller="user" action="save">
-                <div class="row mb-3">
-                    <div>
-                        <label class="required-field">Name:</label>
+                <div class="row mb-3 input-section">
+                    <div class="input-div">
+                        <label class="required-field">Name</label>
                         <g:textField 
                             class="form-control input-field" 
                             name="name" 
                             value="${user?.name}"
                             placeholder="Name"/>
-                        <g:hasErrors bean="${user}" field="name">
-                            <span style="color:red;"><g:message error="${it}"/></span>
-                        </g:hasErrors>
+                        <g:eachError bean="${user}" field="name" var="err">
+                            <span style="color:red;"><g:message error="${err}"/></span>
+                        </g:eachError>
                     </div>
 
-                    <div>
-                        <label class="required-field">Email:</label>
+                    <div class="input-div">
+                        <label class="required-field">Email</label>
                         <g:textField 
                             class="form-control input-field" 
                             name="email" 
                             value="${user?.email}"
                             placeholder="Email"/>
-                        <g:hasErrors bean="${user}" field="email">
-                            <span style="color:red;"><g:message error="${it}"/></span>
-                        </g:hasErrors>
+                        <g:eachError bean="${user}" field="email" var="err">
+                            <span style="color:red;"><g:message error="${err}"/></span>
+                        </g:eachError>
                     </div>
             
-                    <div>
-                        <label class="required-field">CPF:</label>
+                    <div class="input-div">
+                        <label class="required-field">CPF</label>
                         <g:textField 
                             class="form-control input-field" 
                             name="cpf" 
                             value="${user?.cpf}"
                             placeholder="xxx.xxx.xxx-xx"/>
-                        <g:hasErrors bean="${user}" field="cpf">
-                            <span style="color:red;"><g:message error="${it}"/></span>
-                        </g:hasErrors>
+                        <g:eachError bean="${user}" field="cpf" var="err">
+                            <span style="color:red;"><g:message error="${err}"/></span>
+                        </g:eachError>
                     </div>
             
-                    <div>
-                        <label class="required-field">Phone Number:</label>
+                    <div class="input-div">
+                        <label class="required-field">Phone Number</label>
                         <g:textField 
                             class="form-control input-field" 
                             name="phoneNumber" 
-                            value="${user?.phoneNumber}" />
-                        <g:hasErrors bean="${user}" field="phoneNumber">
-                            <span style="color:red;"><g:message error="${it}"/></span>
-                        </g:hasErrors>
+                            value="${user?.phoneNumber}"
+                            placeholder="(xx)xxxxx-xxxx"/>
+                        <g:eachError bean="${user}" field="phoneNumber" var="err">
+                            <span style="color:red;"><g:message error="${err}"/></span>
+                        </g:eachError>
                     </div>
             
-                    <div class="col-12">
-                        <label class="required-field">Birth Date:</label>
-                        <g:datePicker class="form-control input-field"
+                    <div class="col-12 input-div">
+                        <label class="required-field row">Birth Date</label>
+                        <div class="birth-date-input">
+                            <g:datePicker class="form-control input-field "
                             name="birthDate" 
                             value="${user?.birthDate}" 
                             precision="day" 
-                            years="${1920..2025}"/>
-                        <g:hasErrors bean="${user}" field="birthDate">
-                            <span style="color:red;"><g:message error="${it}"/></span>
-                        </g:hasErrors>
+                            years="${1920..(new Date().year + 1900)}"/>
+                        </div>
+                        <g:eachError bean="${user}" field="birthDate" var="err">
+                            <span style="color:red;"><g:message error="${err}"/></span>
+                        </g:eachError>
                     </div>
 
-                    <div class="col-12 col-sm-6">
-                        <label class="required-field">CEP:</label>
+                    <div class="col-12 col-sm-6 input-div">
+                        <label class="required-field">CEP</label>
                         <g:textField class="form-control input-field" 
                             name="cep" 
                             value="${user?.cep}"
                             placeholder="CEP"/>
-                        <g:hasErrors bean="${user}" field="cep">
-                            <span style="color:red;"><g:message error="${it}"/></span>
-                        </g:hasErrors>
+                        <g:eachError bean="${user}" field="cep" var="err">
+                            <span style="color:red;"><g:message error="${err}"/></span>
+                        </g:eachError>
                     </div>
 
-                    <div>
-                        <label class="required-field">Address:</label>
+                    <div class="input-div">
+                        <label class="required-field">Address</label>
                         <g:textField class="form-control input-field" name="address" value="${user?.address}" disabled="disabled"/>
-                        <g:hasErrors bean="${user}" field="address">
-                            <span style="color:red;"><g:message error="${it}"/></span>
-                        </g:hasErrors>
+                        <g:eachError bean="${user}" field="address" var="err">
+                            <span style="color:red;"><g:message error="${err}"/></span>
+                        </g:eachError>
                     </div>
                 </div>
 

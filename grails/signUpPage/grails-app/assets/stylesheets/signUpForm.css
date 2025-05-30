@@ -63,6 +63,15 @@ header.page-header {
             div {
                 margin-bottom: 1rem;
             }
+            
+            .input-section .input-div {
+                display:flex;
+                flex-direction: column;
+
+                .birth-date-input {
+                    flex-direction: row;
+                }
+            }
 
             div .input-field{
                 height: 30px;
