@@ -110,11 +110,12 @@
 
                     <div class="col-12 col-sm-6 input-div">
                         <label class="required-field">CEP</label>
-                        <g:textField class="form-control input-field" 
+                        <g:textField class="form-control input-field"
+                            id="cep"
                             name="cep" 
                             value="${user?.cep}"
                             placeholder="xxxxx-xxx"
-                        pattern='\\d{5}-\\d{3}'/>
+                        />
                         <g:eachError bean="${user}" field="cep" var="err">
                             <span style="color:red;"><g:message error="${err}"/></span>
                         </g:eachError>
