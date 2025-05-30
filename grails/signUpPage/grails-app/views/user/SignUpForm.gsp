@@ -101,7 +101,7 @@
                             name="birthDate" 
                             value="${user?.birthDate}" 
                             precision="day" 
-                            years="${1920..(new Date().year + 1900)}"/>
+                            years="${1920..(new Date().year + (1900-18))}"/>
                         </div>
                         <g:eachError bean="${user}" field="birthDate" var="err">
                             <span style="color:red;"><g:message error="${err}"/></span>
