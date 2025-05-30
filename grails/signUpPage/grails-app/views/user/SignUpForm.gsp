@@ -12,6 +12,8 @@
 
     <asset:stylesheet src="global.css"/>
     <asset:stylesheet src="signUpForm.css"/>
+    <script defer src="${resource(dir:'javascripts', file:'SignUp.js')}"></script>
+
 </head>
 <body>
     <header class="page-header">
@@ -116,7 +118,7 @@
 
                     <div class="input-div">
                         <label class="required-field">Address</label>
-                        <g:textField class="form-control input-field" name="address" value="${user?.address}" disabled="disabled"/>
+                        <g:textField class="form-control input-field" name="address" value="${user?.address}" readonly="readonly"/>
                         <g:eachError bean="${user}" field="address" var="err">
                             <span style="color:red;"><g:message error="${err}"/></span>
                         </g:eachError>

@@ -24,6 +24,6 @@ class User {
         }
         phoneNumber matches: /\(\d{2}\)\d{4,5}-\d{4}/, blank: false
         cep blank: false
-        address blank: true, nullable: true // alterar posteriormente
+        address blank: true
     }
 }
